@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:20:28 by toryoshi          #+#    #+#             */
+/*   Updated: 2022/04/26 16:29:20 by toryoshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void	ft_putabs_fd(int minus_num, int fd)
 {
-	if (minus_num <= -10) {
+	if (minus_num <= -10)
+	{
 		ft_putabs_fd(minus_num / 10, fd);
 		minus_num %= 10;
 	}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:15:53 by toryoshi          #+#    #+#             */
+/*   Updated: 2022/04/26 16:35:16 by toryoshi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -31,7 +43,9 @@ static char ft_toupper_i(unsigned int i, char c)
 	return (ft_toupper(c));
 }
 
-static void test_ft_strmapi(char const *s, char (*f)(unsigned int, char), char *expected)
+static void test_ft_strmapi(char const *s, \
+char (*f)(unsigned int, char), \
+char *expected)
 {
 	char *result = ft_strmapi(s, f);
 	printf("Input: %s\n", s);
