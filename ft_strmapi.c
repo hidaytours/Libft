@@ -6,7 +6,7 @@
 /*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:15:53 by toryoshi          #+#    #+#             */
-/*   Updated: 2022/04/26 16:35:16 by toryoshi         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:04:11 by toryoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ char *expected)
 	printf("	expected	: %s\n", expected);
 	printf("	ft_strmapi	: %s\n", result);
 	if (result)
+	{
 		assert(strcmp(result, expected) == 0);
+		free(result);
+	}
 	else
 		assert(result == expected);
 }
@@ -65,11 +68,12 @@ int main()
 	test_ft_strmapi("a", ft_toupper_i, "A");
 	test_ft_strmapi("122333", ft_toupper_i, "122333");
 	test_ft_strmapi(NULL, ft_toupper_i, NULL);
-	test_ft_strmapi("abcd234efgH", NULL, NULL);
+	test_ft_strmapi("abcd234efgH", NULL, "abcd234efgH");
 	test_ft_strmapi(NULL, NULL, NULL);
 
 	printf("---------\n");
 	printf("END\n");
+	system("leaks -q a.out");
 	return (0);
 }
 */
