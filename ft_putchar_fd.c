@@ -14,8 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return ;
 	write(fd, &c, sizeof(c));
 }
 
@@ -30,8 +28,6 @@ int	main()
 	ft_putchar_fd('o', fd);
 	ft_putchar_fd(',', fd);
 	ft_putchar_fd(' ', fd);
-	ft_putchar_fd('4', -1);
-	ft_putchar_fd('2', -42);
 	ft_putchar_fd('W', fd);
 	ft_putchar_fd('0', fd);
 	ft_putchar_fd('r', fd);
