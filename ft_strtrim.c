@@ -6,7 +6,7 @@
 /*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:19:29 by toryoshi          #+#    #+#             */
-/*   Updated: 2022/04/22 18:33:36 by toryoshi         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:14:31 by toryoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static size_t	get_start(char const *s1, char const *set)
 static size_t	get_end(char const *s1, char const *set)
 {
 	size_t	i;
-	size_t len_s1;
+	size_t	len_s1;
 
 	len_s1 = ft_strlen(s1);
 	if (len_s1 == 0)
