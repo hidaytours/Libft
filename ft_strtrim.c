@@ -29,8 +29,12 @@ static size_t	get_start(char const *s1, char const *set)
 static size_t	get_end(char const *s1, char const *set)
 {
 	size_t	i;
+	size_t len_s1;
 
-	i = ft_strlen(s1) - 1;
+	len_s1 = ft_strlen(s1);
+	if (len_s1 == 0)
+		return (0);
+	i = len_s1 - 1;
 	while (i != 0)
 	{	
 		if (ft_strchr(set, s1[i]) == NULL)
