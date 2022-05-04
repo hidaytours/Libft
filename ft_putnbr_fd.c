@@ -30,22 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 		n *= -1;
 	ft_putabs_fd(n, fd);
 }
-
-/*
-int	main()
-{
-	int fd = 1;
-	ft_putnbr_fd(-123, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(555, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(0, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(-2147483648, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(2147483647, fd);
-	ft_putchar_fd('\n', fd);
-
-	return (0);
-}
-*/
