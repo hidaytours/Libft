@@ -2,4 +2,5 @@
 *.a
 *.o
 *_test.c
+main.c
 .vscode
