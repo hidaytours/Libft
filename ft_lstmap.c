@@ -17,24 +17,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*mapped_head;
 	t_list	*mapped;
 
-	if (lst == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	mapped_head = ft_lstnew(f(lst->content));
-	if (mapped_head == NULL)
-		return (NULL);
-	while (lst->next != NULL)
+	mapped_head = NULL;
+	while (lst != NULL)
 	{
-		lst = lst->next;
-		if (f == NULL)
-			mapped = ft_lstnew(lst->content);
-		else
-			mapped = ft_lstnew(f(lst->content));
+		mapped = ft_lstnew(f(lst->content));
 		if (mapped == NULL)
 		{
 			ft_lstclear(&mapped_head, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&mapped_head, mapped);
+		lst = lst->next;
 	}
 	return (mapped_head);
 }
