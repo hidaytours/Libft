@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*mapped_head;
 	t_list	*mapped;
 
-	if (lst == NULL || f == NULL)
+	if (lst == NULL)
 		return (NULL);
 	mapped_head = ft_lstnew(f(lst->content));
 	if (mapped_head == NULL)
@@ -25,7 +25,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst->next != NULL)
 	{
 		lst = lst->next;
-		mapped = ft_lstnew(f(lst->content));
+		if (f == NULL)
+			mapped = ft_lstnew(lst->content);
+		else
+			mapped = ft_lstnew(f(lst->content));
 		if (mapped == NULL)
 		{
 			ft_lstclear(&mapped_head, del);
