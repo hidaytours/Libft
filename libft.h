@@ -6,7 +6,7 @@
 /*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:42:17 by toryoshi          #+#    #+#             */
-/*   Updated: 2022/04/08 01:16:06 by toryoshi         ###   ########.fr       */
+/*   Updated: 2022/05/06 19:47:29 by toryoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

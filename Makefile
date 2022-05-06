@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/06 19:51:05 by toryoshi          #+#    #+#              #
+#    Updated: 2022/05/06 19:51:23 by toryoshi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
@@ -56,3 +68,5 @@ fclean: clean
 	$(RM) $(NAME)
 clean:
 	$(RM) $(OBJS)
+
+.PHONY:	all re fclean clean
