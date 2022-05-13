@@ -23,17 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-
-/*
-#include <stdio.h>
-int main() {
-	char str[] = "Hello, World!";
-	t_list *list = ft_lstnew(str);
-
-	printf("list->content: %s\n", (char *)list->content);
-	printf("list->next: %s\n", (char *)list->next);
-	free(list);
-	system("leaks -q a.out");
-	return (0);
-}
-*/
