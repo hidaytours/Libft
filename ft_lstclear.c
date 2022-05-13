@@ -6,7 +6,7 @@
 /*   By: toryoshi </var/mail/toryoshi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 19:40:13 by toryoshi          #+#    #+#             */
-/*   Updated: 2022/05/06 19:40:36 by toryoshi         ###   ########.fr       */
+/*   Updated: 2022/05/13 14:14:07 by toryoshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
-	while (*lst) {
+	while (*lst)
+	{
 		tmp = *lst;
 		*lst = tmp->next;
 		ft_lstdelone(tmp, del);
