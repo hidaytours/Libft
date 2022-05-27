@@ -21,13 +21,13 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-static int	ft_should_cutoff(unsigned long num, unsigned long prev, int sign)
+static int	ft_should_cutoff(unsigned long num, int n, int sign)
 {
 	if (sign == -1)
-		if (num < prev || num >= ((unsigned long)LONG_MAX + 1))
+		if (num > ((unsigned long)LONG_MAX + 1 - n) / 10)
 			return (1);
 	if (sign == 1)
-		if (num < prev || num >= ((unsigned long)LONG_MAX))
+		if (num > ((unsigned long)LONG_MAX - n) / 10)
 			return (1);
 	return (0);
 }
@@ -35,21 +35,20 @@ static int	ft_should_cutoff(unsigned long num, unsigned long prev, int sign)
 static long	ft_simple_strtol(const char *str, int sign)
 {
 	size_t			i;
+	int				n;
 	unsigned long	num;
-	unsigned long	prev;
 
 	num = 0;
-	prev = 0;
 	i = 0;
 	while (ft_isdigit(str[i]))
 	{
-		num = (num * 10) + (str[i] - '0');
-		if (sign == -1 && ft_should_cutoff(num, prev, sign))
+		n = str[i] - '0';
+		if (sign == -1 && ft_should_cutoff(num, n, sign))
 			return (LONG_MIN);
-		if (sign == 1 && ft_should_cutoff(num, prev, sign))
+		if (sign == 1 && ft_should_cutoff(num, n, sign))
 			return (LONG_MAX);
+		num = (num * 10) + n;
 		i++;
-		prev = num;
 	}
 	return ((long)(sign * num));
 }

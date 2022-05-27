@@ -19,8 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	loop_max;
 
 	len_src = ft_strlen(src);
-	if (dst == NULL && dstsize == 0)
-		return (dstsize + len_src);
+	if (dstsize == 0)
+		return (len_src);
 	len_dst = ft_strlen(dst);
 	if (dstsize <= len_dst)
 		return (dstsize + len_src);
