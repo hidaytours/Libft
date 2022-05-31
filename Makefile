@@ -62,7 +62,7 @@ SRCS_BONUS =	$(DIR_SRC)/ft_lstadd_back.c		\
 
 DIR_OBJ = obj
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(DIR_SRC)/$(SRCS_BONUS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 $(NAME): $(OBJS) $(OBJS_BONUS)
