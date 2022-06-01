@@ -15,13 +15,19 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
+	size_t	len_s;
+	size_t	div;
+	int		mod;
 
 	if (s == NULL)
 		return ;
+	len_s = ft_strlen(s);
+	if (len_s == 0)
+		return ;
+	div = len_s / INT_MAX;
+	mod = len_s % INT_MAX;
 	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	while (i < div)
+		write(fd, &s[INT_MAX * i++], INT_MAX);
+	write(fd, &s[INT_MAX * i], mod);
 }

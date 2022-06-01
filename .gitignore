@@ -1,5 +1,6 @@
 *.out
 *.a
+*.d
 *.o
 *_test.c
 main.c

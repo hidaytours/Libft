@@ -12,7 +12,7 @@
 
 CC = cc
 DIR_INCLUDE = ./include
-CFLAGS = -Wall -Wextra -Werror -I $(DIR_INCLUDE)
+CFLAGS = -Wall -Wextra -Werror -I $(DIR_INCLUDE) -MMD -MP
 NAME = libft.a
 DIR_SRC = src
 SRCS =	$(DIR_SRC)/ft_atoi.c		\
@@ -36,6 +36,7 @@ SRCS =	$(DIR_SRC)/ft_atoi.c		\
 		$(DIR_SRC)/ft_split.c		\
 		$(DIR_SRC)/ft_strchr.c		\
 		$(DIR_SRC)/ft_strdup.c		\
+		$(DIR_SRC)/ft_strndup.c		\
 		$(DIR_SRC)/ft_striteri.c	\
 		$(DIR_SRC)/ft_strjoin.c		\
 		$(DIR_SRC)/ft_strlcat.c		\
