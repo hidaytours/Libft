@@ -12,72 +12,78 @@
 
 CC = cc
 DIR_INCLUDE = ./include
-CFLAGS = -Wall -Wextra -Werror -I $(DIR_INCLUDE) -MMD -MP
+CFLAGS = -Wall -Wextra -Werror -I $(DIR_INCLUDE) #-MMD -MP
 NAME = libft.a
 DIR_SRC = src
-SRCS =	$(DIR_SRC)/ft_atoi.c		\
-		$(DIR_SRC)/ft_bzero.c		\
-		$(DIR_SRC)/ft_calloc.c		\
-		$(DIR_SRC)/ft_isalnum.c		\
-		$(DIR_SRC)/ft_isalpha.c		\
-		$(DIR_SRC)/ft_isascii.c		\
-		$(DIR_SRC)/ft_isdigit.c		\
-		$(DIR_SRC)/ft_isprint.c		\
-		$(DIR_SRC)/ft_itoa.c		\
-		$(DIR_SRC)/ft_memchr.c		\
-		$(DIR_SRC)/ft_memcmp.c		\
-		$(DIR_SRC)/ft_memcpy.c		\
-		$(DIR_SRC)/ft_memmove.c		\
-		$(DIR_SRC)/ft_memset.c		\
-		$(DIR_SRC)/ft_putchar_fd.c	\
-		$(DIR_SRC)/ft_putendl_fd.c	\
-		$(DIR_SRC)/ft_putnbr_fd.c	\
-		$(DIR_SRC)/ft_putstr_fd.c	\
-		$(DIR_SRC)/ft_split.c		\
-		$(DIR_SRC)/ft_strchr.c		\
-		$(DIR_SRC)/ft_strdup.c		\
-		$(DIR_SRC)/ft_strndup.c		\
-		$(DIR_SRC)/ft_striteri.c	\
-		$(DIR_SRC)/ft_strjoin.c		\
-		$(DIR_SRC)/ft_strlcat.c		\
-		$(DIR_SRC)/ft_strlcpy.c		\
-		$(DIR_SRC)/ft_strlen.c		\
-		$(DIR_SRC)/ft_strmapi.c		\
-		$(DIR_SRC)/ft_strncmp.c		\
-		$(DIR_SRC)/ft_strnstr.c		\
-		$(DIR_SRC)/ft_strrchr.c		\
-		$(DIR_SRC)/ft_strtrim.c		\
-		$(DIR_SRC)/ft_substr.c			\
-		$(DIR_SRC)/ft_tolower.c		\
-		$(DIR_SRC)/ft_toupper.c		\
 
-SRCS_BONUS =	$(DIR_SRC)/ft_lstadd_back.c		\
-				$(DIR_SRC)/ft_lstadd_front.c	\
-        		$(DIR_SRC)/ft_lstclear.c		\
-        		$(DIR_SRC)/ft_lstdelone.c		\
-        		$(DIR_SRC)/ft_lstiter.c			\
-        		$(DIR_SRC)/ft_lstlast.c			\
-        		$(DIR_SRC)/ft_lstmap.c			\
-        		$(DIR_SRC)/ft_lstnew.c			\
-        		$(DIR_SRC)/ft_lstsize.c			\
+SRC_CTYPE =		$(DIR_SRC)/ctype/ft_isalnum.c		\
+				$(DIR_SRC)/ctype/ft_isalpha.c		\
+				$(DIR_SRC)/ctype/ft_isascii.c		\
+				$(DIR_SRC)/ctype/ft_isdigit.c		\
+				$(DIR_SRC)/ctype/ft_isprint.c		\
+				$(DIR_SRC)/ctype/ft_tolower.c		\
+				$(DIR_SRC)/ctype/ft_toupper.c		\
+
+SRC_IO =		$(DIR_SRC)/io/ft_putchar_fd.c		\
+				$(DIR_SRC)/io/ft_putendl_fd.c		\
+				$(DIR_SRC)/io/ft_putnbr_fd.c		\
+				$(DIR_SRC)/io/ft_putstr_fd.c		\
+
+SRC_LIST =		$(DIR_SRC)/list/ft_lstadd_back.c	\
+				$(DIR_SRC)/list/ft_lstadd_front.c	\
+        		$(DIR_SRC)/list/ft_lstclear.c		\
+        		$(DIR_SRC)/list/ft_lstdelone.c		\
+        		$(DIR_SRC)/list/ft_lstiter.c		\
+        		$(DIR_SRC)/list/ft_lstlast.c		\
+        		$(DIR_SRC)/list/ft_lstmap.c			\
+        		$(DIR_SRC)/list/ft_lstnew.c			\
+        		$(DIR_SRC)/list/ft_lstsize.c		\
+
+SRC_MEM =		$(DIR_SRC)/mem/ft_bzero.c			\
+				$(DIR_SRC)/mem/ft_memchr.c			\
+				$(DIR_SRC)/mem/ft_memcmp.c			\
+				$(DIR_SRC)/mem/ft_memcpy.c			\
+				$(DIR_SRC)/mem/ft_memmove.c			\
+				$(DIR_SRC)/mem/ft_memset.c			\
+
+SRC_STDLIB =	$(DIR_SRC)/stdlib/ft_atoi.c			\
+				$(DIR_SRC)/stdlib/ft_itoa.c			\
+				$(DIR_SRC)/stdlib/ft_calloc.c		\
+
+SRC_STRING =	$(DIR_SRC)/string/ft_split.c		\
+				$(DIR_SRC)/string/ft_strchr.c		\
+				$(DIR_SRC)/string/ft_strdup.c		\
+				$(DIR_SRC)/string/ft_striteri.c		\
+				$(DIR_SRC)/string/ft_strjoin.c		\
+				$(DIR_SRC)/string/ft_strlcat.c		\
+				$(DIR_SRC)/string/ft_strlcpy.c		\
+				$(DIR_SRC)/string/ft_strlen.c		\
+				$(DIR_SRC)/string/ft_strmapi.c		\
+				$(DIR_SRC)/string/ft_strncmp.c		\
+				$(DIR_SRC)/string/ft_strndup.c		\
+				$(DIR_SRC)/string/ft_strnstr.c		\
+				$(DIR_SRC)/string/ft_strrchr.c		\
+				$(DIR_SRC)/string/ft_strtrim.c		\
+				$(DIR_SRC)/string/ft_substr.c		\
+
+SRCS =			$(SRC_CTYPE)	\
+				$(SRC_IO)		\
+				$(SRC_LIST)		\
+				$(SRC_MEM)		\
+				$(SRC_STDLIB)	\
+				$(SRC_STRING)	\
 
 DIR_OBJ = obj
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
-$(NAME): $(OBJS) $(OBJS_BONUS)
+$(NAME): $(OBJS)
 	ar rcs $@ $^
 
 re:	fclean all
 fclean: clean
 	$(RM) $(NAME)
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
-
-m: $(OBJS)
-	ar rcs $(NAME) $^
-b: $(OBJS_BONUS)
-	ar rcs $(NAME) $^
+	$(RM) $(OBJS)
 
 .PHONY:	all re fclean clean m b
