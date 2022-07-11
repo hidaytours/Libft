@@ -47,6 +47,7 @@ SRC_MEM =		$(DIR_SRC)/mem/ft_bzero.c			\
 				$(DIR_SRC)/mem/ft_memset.c			\
 
 SRC_STDLIB =	$(DIR_SRC)/stdlib/ft_atoi.c			\
+				$(DIR_SRC)/stdlib/ft_atol.c			\
 				$(DIR_SRC)/stdlib/ft_itoa.c			\
 				$(DIR_SRC)/stdlib/ft_calloc.c		\
 
