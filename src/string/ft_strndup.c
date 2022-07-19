@@ -16,7 +16,7 @@ char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*copy;
 
-	if (n < 0 || n == SIZE_MAX)
+	if (n == SIZE_MAX)
 		return (NULL);
 	copy = (char *)malloc(sizeof(char) * (n + 1));
 	if (copy == NULL)
