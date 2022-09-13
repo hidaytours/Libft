@@ -19,6 +19,4 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-char	*get_next_line(int fd);
-
 #endif

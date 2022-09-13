@@ -37,6 +37,5 @@ int		ft_putnbr_hex(unsigned long unum, char *base, int count);
 int		ft_putptr(void *p, int count);
 
 int		ft_parse(const char *str, va_list *args);
-int		ft_printf(const char *vla, ...) __attribute__ ((format (printf, 1, 2)));
 
 #endif
