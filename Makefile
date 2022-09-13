@@ -67,7 +67,7 @@ SRC_STRING =	$(DIR_SRC)/string/ft_split.c		\
 				$(DIR_SRC)/string/ft_strtrim.c		\
 				$(DIR_SRC)/string/ft_substr.c		
 
-SRC_FT_PRINTF =	$(DIR_SRC)/printf/ft_printf.c	\
+SRC_PRINTF =	$(DIR_SRC)/printf/ft_printf.c	\
 				$(DIR_SRC)/printf/ft_parse.c		\
 				$(DIR_SRC)/printf/ft_putnbr.c	\
 				$(DIR_SRC)/printf/ft_putstr.c	\
@@ -81,7 +81,7 @@ SRCS =			$(SRC_CTYPE)		\
 				$(SRC_MEM)			\
 				$(SRC_STDLIB)		\
 				$(SRC_STRING)		\
-				$(SRC_FT_PRINTF)	\
+				$(SRC_PRINTF)	\
 				$(SRC_GNL)
 
 DIR_OBJ = obj
