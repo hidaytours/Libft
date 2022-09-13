@@ -26,9 +26,7 @@ typedef enum e_bool
 	True
 }	t_bool;
 
-size_t	ft_strlen(const char *s);
 int		ft_is_overlimit(int n, int count);
-void	ft_putchar_fd(char c, int fd);
 void	ft_putstrn_fd(char *s, size_t len, int fd);
 
 int		ft_putchar(char c, int count);

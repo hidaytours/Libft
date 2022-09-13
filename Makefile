@@ -73,13 +73,16 @@ SRC_FT_PRINTF =	$(DIR_SRC)/ft_printf/ft_printf.c	\
 				$(DIR_SRC)/ft_printf/ft_putstr.c	\
 				$(DIR_SRC)/ft_printf/ft_utils.c
 
-SRCS =			$(SRC_CTYPE)	\
-				$(SRC_IO)		\
-				$(SRC_LIST)		\
-				$(SRC_MEM)		\
-				$(SRC_STDLIB)	\
-				$(SRC_STRING)	\
-				$(SRC_FT_PRINTF)
+SRC_GNL =	$(DIR_SRC)/gnl/get_next_line.c
+
+SRCS =			$(SRC_CTYPE)		\
+				$(SRC_IO)			\
+				$(SRC_LIST)			\
+				$(SRC_MEM)			\
+				$(SRC_STDLIB)		\
+				$(SRC_STRING)		\
+				$(SRC_FT_PRINTF)	\
+				$(SRC_GNL)
 
 DIR_OBJ = obj
 OBJS = $(SRCS:.c=.o)
@@ -94,4 +97,4 @@ fclean: clean
 clean:
 	$(RM) $(OBJS)
 
-.PHONY:	all re fclean clean m b
+.PHONY:	all re fclean clean
