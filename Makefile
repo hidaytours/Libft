@@ -22,12 +22,12 @@ SRC_CTYPE =		$(DIR_SRC)/ctype/ft_isalnum.c		\
 				$(DIR_SRC)/ctype/ft_isdigit.c		\
 				$(DIR_SRC)/ctype/ft_isprint.c		\
 				$(DIR_SRC)/ctype/ft_tolower.c		\
-				$(DIR_SRC)/ctype/ft_toupper.c		\
+				$(DIR_SRC)/ctype/ft_toupper.c		
 
 SRC_IO =		$(DIR_SRC)/io/ft_putchar_fd.c		\
 				$(DIR_SRC)/io/ft_putendl_fd.c		\
 				$(DIR_SRC)/io/ft_putnbr_fd.c		\
-				$(DIR_SRC)/io/ft_putstr_fd.c		\
+				$(DIR_SRC)/io/ft_putstr_fd.c		
 
 SRC_LIST =		$(DIR_SRC)/list/ft_lstadd_back.c	\
 				$(DIR_SRC)/list/ft_lstadd_front.c	\
@@ -37,19 +37,19 @@ SRC_LIST =		$(DIR_SRC)/list/ft_lstadd_back.c	\
         		$(DIR_SRC)/list/ft_lstlast.c		\
         		$(DIR_SRC)/list/ft_lstmap.c			\
         		$(DIR_SRC)/list/ft_lstnew.c			\
-        		$(DIR_SRC)/list/ft_lstsize.c		\
+        		$(DIR_SRC)/list/ft_lstsize.c		
 
 SRC_MEM =		$(DIR_SRC)/mem/ft_bzero.c			\
 				$(DIR_SRC)/mem/ft_memchr.c			\
 				$(DIR_SRC)/mem/ft_memcmp.c			\
 				$(DIR_SRC)/mem/ft_memcpy.c			\
 				$(DIR_SRC)/mem/ft_memmove.c			\
-				$(DIR_SRC)/mem/ft_memset.c			\
+				$(DIR_SRC)/mem/ft_memset.c			
 
 SRC_STDLIB =	$(DIR_SRC)/stdlib/ft_atoi.c			\
 				$(DIR_SRC)/stdlib/ft_atol.c			\
 				$(DIR_SRC)/stdlib/ft_itoa.c			\
-				$(DIR_SRC)/stdlib/ft_calloc.c		\
+				$(DIR_SRC)/stdlib/ft_calloc.c		
 
 SRC_STRING =	$(DIR_SRC)/string/ft_split.c		\
 				$(DIR_SRC)/string/ft_strchr.c		\
@@ -65,7 +65,13 @@ SRC_STRING =	$(DIR_SRC)/string/ft_split.c		\
 				$(DIR_SRC)/string/ft_strnstr.c		\
 				$(DIR_SRC)/string/ft_strrchr.c		\
 				$(DIR_SRC)/string/ft_strtrim.c		\
-				$(DIR_SRC)/string/ft_substr.c		\
+				$(DIR_SRC)/string/ft_substr.c		
+
+SRC_FT_PRINTF =	$(DIR_SRC)/ft_printf/ft_printf.c	\
+				$(DIR_SRC)/ft_printf/ft_parse.c		\
+				$(DIR_SRC)/ft_printf/ft_putnbr.c	\
+				$(DIR_SRC)/ft_printf/ft_putstr.c	\
+				$(DIR_SRC)/ft_printf/ft_utils.c
 
 SRCS =			$(SRC_CTYPE)	\
 				$(SRC_IO)		\
@@ -73,6 +79,7 @@ SRCS =			$(SRC_CTYPE)	\
 				$(SRC_MEM)		\
 				$(SRC_STDLIB)	\
 				$(SRC_STRING)	\
+				$(SRC_FT_PRINTF)
 
 DIR_OBJ = obj
 OBJS = $(SRCS:.c=.o)
