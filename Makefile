@@ -60,6 +60,7 @@ SRC_STRING =	$(DIR_SRC)/string/ft_split.c		\
 				$(DIR_SRC)/string/ft_strlcpy.c		\
 				$(DIR_SRC)/string/ft_strlen.c		\
 				$(DIR_SRC)/string/ft_strmapi.c		\
+				$(DIR_SRC)/string/ft_strcmp.c		\
 				$(DIR_SRC)/string/ft_strncmp.c		\
 				$(DIR_SRC)/string/ft_strndup.c		\
 				$(DIR_SRC)/string/ft_strnstr.c		\
